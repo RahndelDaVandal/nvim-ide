@@ -108,3 +108,6 @@ keymap("n", "<leader>F", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>w", ":w<cr>", opts)
 keymap("n", "<leader>q", ":q<cr>", opts)
 keymap("n", "<leader>qq", ":q!<cr>", opts)
+keymap("n", "<leader>t", ":ToggleTerm<CR>", opts)
+keymap("t", "<leader>t", "<C-\\>", opts) -- Not working at the moment
+keymap("n", "<leader>z", "z.", opts)
