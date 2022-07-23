@@ -12,6 +12,9 @@ local servers = {
   "bashls",
   "jsonls",
   "yamlls",
+  "gopls",
+  "golangci_lint_ls",
+  "rust_analyzer",
 }
 
 lsp_installer.setup()
