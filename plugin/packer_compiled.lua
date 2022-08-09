@@ -209,6 +209,11 @@ _G.packer_plugins = {
     path = "/home/pi/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
   },
+  ["rust.vim"] = {
+    loaded = true,
+    path = "/home/pi/.local/share/nvim/site/pack/packer/start/rust.vim",
+    url = "https://github.com/rust-lang/rust.vim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/pi/.local/share/nvim/site/pack/packer/start/telescope.nvim",
