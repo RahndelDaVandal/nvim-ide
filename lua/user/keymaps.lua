@@ -1,4 +1,4 @@
--- Shorten function name
+
 local keymap = vim.keymap.set
 -- Silent keymap option
 local opts = { silent = true }
@@ -58,6 +58,8 @@ keymap("i", "jk", "<ESC>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
+keymap("v", "J", ":m '>+1<CR>gv=gv")
+keymap("v", "K", ":m '>-2<CR>gv=gv")
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
@@ -65,8 +67,9 @@ keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
 -- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+-- Moved moving the lines up and down to visual line mode
+-- keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
+-- keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
@@ -104,6 +107,17 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<leader>F", "<cmd>Telescope live_grep<cr>", opts)
 
+-- Harpoon Keymaps
+-- toggle menu
+keymap("n", "<C-e>", ':lua require("harpoon.ui").toggle_quick_menu()<CR>', opts)
+-- add file to harpoon
+keymap("n", "<leader>a", ':lua require("harpoon.mark").add_file()<CR>', opts)
+-- switch to file
+keymap("n", "<C-j>", ':lua require("harpoon.ui").nav_file(1)<CR>', opts)
+keymap("n", "<C-k>", ':lua require("harpoon.ui").nav_file(2)<CR>', opts)
+keymap("n", "<C-l>", ':lua require("harpoon.ui").nav_file(3)<CR>', opts)
+keymap("n", "<C-;>", ':lua require("harpoon.ui").nav_file(4)<CR>', opts)
+
 -- My Custom Keymaps
 keymap("n", "<leader>w", ":w<cr>", opts)
 keymap("n", "<leader>q", ":q<cr>", opts)
@@ -111,3 +125,5 @@ keymap("n", "<leader>qq", ":q!<cr>", opts)
 keymap("n", "<leader>t", ":ToggleTerm<CR>", opts)
 keymap("t", "<leader>t", "<C-\\>", opts) -- Not working at the moment
 keymap("n", "<leader>z", "z.", opts)
+keymap("n","<C-u>", "<C-u>zz", opts)
+keymap("n","<C-d>", "<C-d>zz", opts)

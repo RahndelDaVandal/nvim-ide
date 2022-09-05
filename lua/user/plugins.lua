@@ -88,6 +88,7 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     commit = "518e27589c0463af15463c9d675c65e464efc2fe",
   }
+  use 'nvim-treesitter/nvim-treesitter-context'
 
   -- Package Manager
   use { "williamboman/mason.nvim" }
@@ -114,6 +115,8 @@ return packer.startup(function(use)
     }
   end
   }
+
+  use 'ThePrimeagen/harpoon'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
