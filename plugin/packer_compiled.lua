@@ -154,11 +154,6 @@ _G.packer_plugins = {
     path = "/home/pi/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  ["mason.nvim"] = {
-    loaded = true,
-    path = "/home/pi/.local/share/nvim/site/pack/packer/start/mason.nvim",
-    url = "https://github.com/williamboman/mason.nvim"
-  },
   ["nord-vim"] = {
     loaded = true,
     path = "/home/pi/.local/share/nvim/site/pack/packer/start/nord-vim",
@@ -243,6 +238,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pi/.local/share/nvim/site/pack/packer/start/rust.vim",
     url = "https://github.com/rust-lang/rust.vim"
+  },
+  ["telescope-fzf-native.nvim"] = {
+    loaded = true,
+    path = "/home/pi/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
