@@ -11,15 +11,15 @@ vim.g.mapleader = " "
 --   insert_mode = "i",
 --   visual_mode = "v",
 --   visual_block_mode = "x",
---   term_mode = "t",
 --   command_mode = "c",
+--   term_mode = "t",
 
 -- Normal --
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+-- keymap("n", "<C-h>", "<C-w>h", opts)
+-- keymap("n", "<C-j>", "<C-w>j", opts)
+-- keymap("n", "<C-k>", "<C-w>k", opts)
+-- keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -40,10 +40,6 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
-
--- Move text up and down
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
@@ -67,8 +63,8 @@ keymap("v", "p", '"_dP', opts)
 -- Visual Block --
 -- Move text up and down
 -- Moved moving the lines up and down to visual line mode
--- keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
--- keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
@@ -87,8 +83,8 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 -- Comment
-keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
-keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
+-- keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
+-- keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
 
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
@@ -121,8 +117,12 @@ keymap("n", "<C-l>", ':lua require("harpoon.ui").nav_file(4)<CR>', opts)
 keymap("n", "<leader>w", ":w<cr>", opts)
 keymap("n", "<leader>q", ":q<cr>", opts)
 keymap("n", "<leader>qq", ":q!<cr>", opts)
-keymap("n", "<leader>t", ":ToggleTerm<CR>", opts)
-keymap("t", "<leader>t", "<C-\\>", opts) -- Not working at the moment
+-- keymap("n", "<leader>t", ":ToggleTerm<CR>", opts)
+-- keymap("t", "<leader>t", "<C-\\>", opts) -- Not working at the moment
 keymap("n", "<leader>z", "z.", opts)
 keymap("n","<C-u>", "<C-u>zz", opts)
 keymap("n","<C-d>", "<C-d>zz", opts)
+
+-- keymap('n', "<leader>t", ":FloatermNew --name=myfloat --height=0.8 --width=0.7 --autoclose=2 fish <CR> ")
+keymap('n', "<leader>t", ":FloatermToggle myfloat<CR>")
+keymap('t', "<Esc>", "<C-\\><C-n>:q<CR>")

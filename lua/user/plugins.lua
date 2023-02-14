@@ -43,6 +43,10 @@ return packer.startup(function(use)
   -- Package manager
   use 'wbthomason/packer.nvim'
 
+  use 'lewis6991/impatient.nvim'
+  use 'lukas-reineke/indent-blankline.nvim'
+  use 'windwp/nvim-autopairs'
+
   use { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     requires = {
@@ -86,6 +90,8 @@ return packer.startup(function(use)
     after = 'nvim-treesitter',
   }
 
+  use 'nvim-treesitter/nvim-treesitter-context'
+
   -- Git related plugins
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
@@ -122,16 +128,16 @@ return packer.startup(function(use)
     end
   }
 
+  -- Harpoon
   use 'ThePrimeagen/harpoon'
+
+  -- FloatTerm
+  use 'voldikss/vim-floaterm'
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then
     plugins(use)
-  end
-
-  if is_bootstrap then
-    require('packer').sync()
   end
 
 end)
