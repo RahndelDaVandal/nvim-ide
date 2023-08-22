@@ -16,10 +16,10 @@ vim.g.mapleader = " "
 
 -- Normal --
 -- Better window navigation
--- keymap("n", "<C-h>", "<C-w>h", opts)
--- keymap("n", "<C-j>", "<C-w>j", opts)
--- keymap("n", "<C-k>", "<C-w>k", opts)
--- keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<C-h>", "<C-w>h", opts)
+keymap("n", "<C-j>", "<C-w>j", opts)
+keymap("n", "<C-k>", "<C-w>k", opts)
+keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -104,14 +104,14 @@ keymap("n", "<leader>F", "<cmd>Telescope live_grep<cr>", opts)
 
 -- Harpoon Keymaps
 -- toggle menu
-keymap("n", "<C-e>", ':lua require("harpoon.ui").toggle_quick_menu()<CR>', opts)
+-- keymap("n", "<C-e>", ':lua require("harpoon.ui").toggle_quick_menu()<CR>', opts)
 -- add file to harpoon
-keymap("n", "<leader>a", ':lua require("harpoon.mark").add_file()<CR>', opts)
+-- keymap("n", "<leader>a", ':lua require("harpoon.mark").add_file()<CR>', opts)
 -- switch to file
-keymap("n", "<C-h>", ':lua require("harpoon.ui").nav_file(1)<CR>', opts)
-keymap("n", "<C-j>", ':lua require("harpoon.ui").nav_file(2)<CR>', opts)
-keymap("n", "<C-k>", ':lua require("harpoon.ui").nav_file(3)<CR>', opts)
-keymap("n", "<C-l>", ':lua require("harpoon.ui").nav_file(4)<CR>', opts)
+-- keymap("n", "<C-h>", ':lua require("harpoon.ui").nav_file(1)<CR>', opts)
+-- keymap("n", "<C-j>", ':lua require("harpoon.ui").nav_file(2)<CR>', opts)
+-- keymap("n", "<C-k>", ':lua require("harpoon.ui").nav_file(3)<CR>', opts)
+-- keymap("n", "<C-l>", ':lua require("harpoon.ui").nav_file(4)<CR>', opts)
 
 -- My Custom Keymaps
 keymap("n", "<leader>w", ":w<cr>", opts)
@@ -126,3 +126,5 @@ keymap("n","<C-d>", "<C-d>zz", opts)
 -- keymap('n', "<leader>t", ":FloatermNew --name=myfloat --height=0.8 --width=0.7 --autoclose=2 fish <CR> ")
 keymap('n', "<leader>t", ":FloatermToggle myfloat<CR>")
 keymap('t', "<Esc>", "<C-\\><C-n>:q<CR>")
+
+keymap('n', "<leader>jf", ":%!python -m json.tool<cr>", opts)
