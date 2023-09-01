@@ -1,82 +1,36 @@
 require 'user.plugins'
 
--- Set highlight on search
 vim.o.hlsearch = true
-
 vim.o.numberwidth = 4
-
--- Make line numbers default
 vim.wo.number = true
-
--- Enable realative line numbers
 vim.wo.relativenumber = true
-
--- Increase cmd line height
 vim.o.cmdheight = 2
-
--- Set encoding written to a file
 vim.o.encoding = 'utf-8'
-
--- Enable mouse mode
 vim.o.mouse = 'a'
-
--- Enable break indent
 vim.o.breakindent = true
-
--- Save undo history
 vim.o.undofile = true
-
--- Disable creation of backup file for buffer
 vim.o.backup = false
-
--- if a file is being edited by another program, or was written to file while editing another program, is not allowed
 vim.o.writebackup = false
-
--- Convert tabs to spaces
 vim.o.expandtab = true
-
--- Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true
-
--- Decrease update time
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
-
--- Set colorscheme
-vim.o.termguicolors = true
--- vim.cmd [[colorscheme onedark]]
+vim.o.termguicolors = false
 vim.cmd [[colorscheme tokyonight]]
-
--- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
-
--- Number of spaces inserted for each indentation
 vim.o.shiftwidth = 2
-
--- Insert 2 spaces for a tab
 vim.o.tabstop = 2
-
--- Line wrap settings
 vim.o.wrap = true
 vim.o.linebreak = true
 vim.o.whichwrap = 'bs<>[]hl'
-
--- Scrolloff options
 vim.o.scrolloff = 15
 vim.o.sidescrolloff = 8
 
--- [[ Basic Keymaps ]]
--- Set <space> as the leader key
--- See `:help mapleader`
---  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
+-- [[ Keymaps ]]
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-
--- Keymaps for better default experience
--- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-
 -- Remap for dealing with word wrap
 -- vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 -- vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -97,7 +51,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    -- theme = 'onedark',
     theme = 'tokyonight',
     component_separators = '|',
     section_separators = '',
@@ -289,12 +242,12 @@ local servers = {
   rust_analyzer = {},
   -- tsserver = {},
 
-  sumneko_lua = {
-    Lua = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
-    },
-  },
+  -- sumneko_lua = {
+  --   Lua = {
+  --     workspace = { checkThirdParty = false },
+  --     telemetry = { enable = false },
+  --   },
+  -- },
 }
 
 -- Setup neovim lua configuration
